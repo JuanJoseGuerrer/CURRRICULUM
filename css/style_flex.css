@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.element{
+    background-color: aqua;
+    height: 50px;
+    width: 20%;
+}
+
+.container{
+    width: 95%;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 0 10px greenyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.element{
+    background-color: aqua;
+    height: 50px;
+    width: 20%;
+    color: blueviolet;
+    font-size: 30px;
+    font-weight: 700;
+    border: 2px solid #000000;
+    margin: 5px;
+
+}
+
+#one{
+    background-color: #adff2f;
+
+}
+
+#two{
+    background-color: bisque;
+}
+
