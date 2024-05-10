@@ -20,8 +20,25 @@
         <div><button id="send" onclick="send_form()"> Enviar </button></div>
         <div id="print"></div>
     </div>
-    <script src="/js/functions.js"> </script>
-    
+    <br>
+    <div>
+        <div id="text"></div>
+        <div> <button onclick="action()"> Calcular </button></div>
+        <div id="result"></div>
+    </div>
+
+    <div>
+        <button onclick="agregar()"> Agregar</button>
+        <input type="text" id="num" size="1" placeholder="Num">
+        <button onclick="eliminar()"> Eliminar </button>
+        <button onclick="limpiar()"> Limpiar </button>
+        <button onclick="reves()"> Reverse </button>
+        <button onclick="primNum()"> Agregar primer numero</button>
+        <button onclick="ultNum()"> Agregar ultimo numero</button>
+    </div>
+    <div> <input type="text" id="impresion" disabled></div>
+    <script src="../js/functions.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/sweetalert2@11.js"></script>
 </body>
 </html>
