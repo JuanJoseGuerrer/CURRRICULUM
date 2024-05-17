@@ -39,36 +39,64 @@ function send_form(){
     
     let name      = document.getElementById("name").value; 
     let last_name = document.getElementById("last_name").value;
-    if(console.log == 0 || last_name.length == 0){
+    let pass_one= document.getElementById("pass_one").value;
+    let pass_two = document.getElementById("pass_two").value;
+    
+
+    
+    if(name.length == 0 || last_name.length == 0 || pass_one.length == 0 || pass_two.length == 0){
         Swal.fire({
             icon: "error",
             title: "Cajas de texto vacias",
             text: "Alguna de las cajas se encuentra vacia",
             
-          });
-
-        if(name.length == 0){
-
-            document.getElementById("name").style.border = "2px solid red"
-        
-        }else{
-            document.getElementById("name").style.border = "2px solid green"
-        }
-
-        
-        if(last_name.length == 0){
-
-            document.getElementById("last_name").style.border = "2px solid red"
-        }else{
-            document.getElementById("name").style.border = "2px solid green"
-        }
-
+        });
+    }else if(pass_one != pass_two){
+        Swal.fire({
+            icon: "error",
+            title: "Sus contraseñas no son iguales",
+            text: "por favor valide sus credenciales",
+                
+        });
     }else{
-        document.getElementById("print").innerText = "Su nombre es " + name + " " + last_name;
+        document.getElementById("texto").innerText = name;
+
     }
 
-
+    
+        
+    
 }
+
+
+    //if(console.log == 0 || last_name.length == 0){
+
+        
+
+    //        if(name.length == 0){
+    //
+    //          document.getElementById("name").style.border = "2px solid red"
+    //      
+    //        }else{
+    //            document.getElementById("name").style.border = "2px solid green"
+    //        }
+    //
+    //        
+    //        if(last_name.length == 0){
+    //
+    //            document.getElementById("last_name").style.border = "2px solid red"
+    //        }else{
+    //           document.getElementById("name").style.border = "2px solid green"
+    //        }
+    //
+    //    }else{
+    //        document.getElementById("print").innerText = "Su nombre es " + name + " " + last_name;
+   //}
+    //
+    //
+
+    
+
 
 
  //arrays
@@ -142,6 +170,35 @@ function load_page(){
 
         document.getElementById("text").innerText = "el array a calcular es" + array_num;
         document.getElementById("impresion").value = array_num;
+        let hour_system =new Date();
+        document.getElementById("hour_system").value = hour_system;
+        
+        console.log("minutos " + hour_system.getMinutes());
+        console.log("hora " + hour_system.getHours());
+        console.log("dia " + hour_system.getDate());
+        console.log("mes " + (hour_system.getMonth() + 1));
+        console.log("Año " + hour_system.getFullYear());
+        
+
+        let dias = ["domingo", "lunes", "martes", "miercoles", "jueves", "viernes", "sabado"]
+        let meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+
+        let dia = hour_system.getDay();
+        let mes = hour_system.getMonth();
+        for(let i = 0; i<dias.length; i++){
+            console.log(dias[dia])
+            console.log(meses[mes])
+            break;
+        }
+
+        console.log("hoy es:" + dias[dia])
+        let dia_mes = hour_system.getMonth() + 1;
+        console.log(hour_system.getDate()+"/"+dia_mes+"/"+hour_system.getFullYear());
+        document.getElementById("hour_system").value = hour_system;
+
+
+        
+
         
 }
 
@@ -157,10 +214,18 @@ function eliminar(){
 
 function agregar(){
     let num = document.getElementById("num").value
-    let array_add = array_num.push(num);
-    console.log(array_add);
-    document.getElementById("impresion").value = array_num;
-    console.log(array_num)
+    
+    
+
+    if(isNaN(num) == true){
+        swal.fire("Solo se aceptan numeros")
+    }else{
+        let array_add = array_num.push(num);
+        console.log(array_add);
+        document.getElementById("impresion").value = array_num;
+        console.log(array_num)
+
+    }
 }
 
 function reves(){
@@ -190,5 +255,27 @@ function ultNum(){
     console.log(array_num);
     document.getElementById("impresion").value = array_num;
     
+    
+}
+
+var nombre_form ="Juan Jose Guerrero";
+document.getElementById("name_search").value = nombre_form;
+
+function search(){
+    
+    let nombre_buscar = document.getElementById("name_search").value;
+    //swal.fire(nombre_buscar.toLowerCase());
+    //swal.fire({
+    //    title:nombre_buscar.toLowerCase(),
+    //    text:"algunas de las cajas se encuentra vacia",
+    //    icon:"error"
+    //})
+    //swal.fire(nombre_buscar.charAt(0));
+    //let word = nombre_buscar.LastIndexOf("J");
+    let word = nombre_buscar.split("");
+    Swal.fire(word + "");
+    console.log(word);
+    let word_com = word.join("");
+    console.log(word_com);
     
 }
