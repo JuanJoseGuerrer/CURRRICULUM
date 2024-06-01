@@ -36,7 +36,7 @@ nav{
     height: 80px;
     background-color: #ffffff;
     border-bottom: 1px solid transparent;
-    box-shadow: 0px 0px 10px 0px rgb(172, 233, 218), 0px 1px 15px 1px rgb(172, 237, 248);
+    box-shadow: 1px 0px 10px 0px #d45252;
     position:fixed;
     top: 0;
     z-index: 100;
@@ -68,8 +68,8 @@ nav{
 
 .nav .enlaces-header a:hover{
     color: rgb(255, 255, 255);
-    background-color: #234d9b;
-    border-color: #d03d3d;
+    background-color: #d14444;
+    border-color: #d34747;
     transition: all ease-in-out .6s;
 }
 
@@ -139,7 +139,7 @@ nav{
     margin: 28px 0 0 0;
     width: 150px;
     display: inline-block;
-    background-color: #234d9b;
+    background-color: #dc191cd3;
     text-align: center;
     color: #ecf3ef;
     padding: 12px 0;
@@ -160,7 +160,7 @@ nav{
 }
 
 .educacion{
-    background-color: rgb(236, 221, 218);
+    background-color: #dc191b;
 
 }
 
@@ -173,7 +173,7 @@ nav{
 
 .articulo{
     width: 30%;
-    background-color: #1e48a1;
+    background-color: #68747b;
     margin-top: 50px;
     border-radius: 10px;
     padding: 45px 30px 60px 30px;
@@ -224,9 +224,9 @@ nav{
 
 .experience {
     width: 32%;
-    border: 2px solid #fff;
+    border: 2px solid;
     border-radius: 5px;
-    background-color: #85c743;
+    background-color: rgb(211, 208, 208);
     color: #565759;
     margin-top: 50px;
     padding: 20px;
@@ -236,6 +236,7 @@ nav{
 .experience:hover{
     background-color: var(--color);
     color: #fff;
+    border-color: #DAA520;
 }
 
 .experience:hover {
@@ -306,8 +307,9 @@ nav{
 
 /* ################################## CERTIFICADOS ################################## */
 .certificados {
-    background: #f2f2f2;
+    background: #dc191b;
     /* padding: 0 100px; */
+    color: white;
 }
 
 .content-certificados {
@@ -337,8 +339,9 @@ nav{
 .certificate:hover {
     box-shadow: 0 4px 10px rgba(17, 29, 48, .26);
     color: #fff;
-    background: #d03d3d;
+    background: rgba(138, 137, 137, 0.863);
     transition: .5s;
+    border-color: #DAA520;
 }
 
 .certificate a {
@@ -347,8 +350,176 @@ nav{
 }
 
 .certificate a:hover {
+    color: #ffffff;
+    
+}
+
+/* ################################## MEDIA QUERYS ################################## */
+@media screen and (max-width:600px) {
+    h1 {
+        font-size: 25px;
+    }
+    .contenido-header {
+        width: 100%;
+        height: 560px;
+    }
+    .contenido-header > img {
+        width: 120px;
+        height: 120px;
+        animation: ease-in animacion 0,5s;
+        margin: 20px 0;
+    }
+    .articulo, .experience, .certificate, .skills {
+        width: 90%;
+    }
+    .skills {
+        margin-bottom: 20px;
+    }
+    .articulo, .experience, .content-skills {
+        margin-top: 20px;
+    }
+    .content-skills {
+        margin-bottom: 20px;
+    }
+    .content-certificados {
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    .enlaces-header{
+        position: fixed;
+        background-color: #d03d3d;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        clip-path: circle(0.0% at 0 0);
+    }
+
+    .nav .hamburgueropen {
+        clip-path: circle(150.0% at 0 0);
+    }
+
+    .nav .enlaces-header a{
+        color: #fff;
+        background-color: rgb(106, 103, 103);
+        text-transform: uppercase;
+        font-weight: 800;
+        margin-top: 20px;
+        width: 50%;
+        text-align: center;
+    }
+
+    .nav .enlaces-header a:hover {
+        color: var(--color);
+        background-color: #fff;
+    }
+
+    .hamburguer {
+        display: block;
+    }
+}
+
+/* ################################## FOOTER ################################## */
+footer {
+    background: rgb(70, 70, 70);
+    padding: 20px 0;
+    padding-top: 30px;
+    overflow: hidden; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.partFooter {
+    width: 22%;
+    text-align: center;
+}
+
+.partFooter img {
+    width: 60%;
+}
+
+.partFooter h4 {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    background-color: #d03d3d;
+    padding: 5px;
+    border: 1px solid #d03d3d;
+    border-radius: 5px;
+}
+
+.contact {
+    margin: 10px;
+    display: block;
+    text-align: left;
+}
+
+.contact > i {
+    float: left;
+    margin: 0 0 0 10px;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    line-height: 28px;
+    text-align: center;
+    align-items: center;
+}
+
+.contact > p {
+    margin-left: 50px;
+    align-items: center;
+    line-height: 28px;
+    font-weight: 500;
     color: #fff;
 }
+
+.partFooter > a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 10px;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.partFooter > a:hover {
+    color: #fff;
+    background-color: #cf6c6c;
+    border-color: #cf6c6c;
+    transition: all ease-in-out .6s;
+    border-radius: 5px;
+}
+
+.social-media > a > i {
+    font-size: 20px;
+    display: inline-block; 
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50%; 
+    width: 38px; 
+    height: 38px; 
+    line-height: 36px; 
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    transition: all ease-in-out .3s;
+    margin-right: 5px;
+}
+
+.social-media > a > i:hover {
+    color: #fff;
+    background-color: #d03d3d;
+    border-color: #d03d3d;
+}
+
 
 /* ################################## MEDIA QUERYS ################################## */
 @media screen and (max-width:600px) {
